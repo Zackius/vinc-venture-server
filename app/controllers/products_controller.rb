@@ -3,39 +3,35 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
+    @product = Product.all
 
-    render json: @products
+    render json: @product, status: :ok
   end
 
   # GET /products/1
   def show
-    render json: @product
+@product = find_product
+render json: @product, status: :ok
   end
 
   # POST /products
   def create
     @product = Product.new(product_params)
-
-    if @product.save
-      render json: @product, status: :created, location: @product
-    else
-      render json: @product.errors, status: :unprocessable_entity
-    end
+   render json: recipe, status: :created
   end
 
   # PATCH/PUT /products/1
   def update
-    if @product.update(product_params)
-      render json: @product
-    else
-      render json: @product.errors, status: :unprocessable_entity
-    end
+  @product = find_product.update!(product_params)
+  render json: recipe
+
   end
 
   # DELETE /products/1
   def destroy
+    @product = find_product
     @product.destroy
+    head :no_content
   end
 
   private
@@ -43,6 +39,12 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
+
+    #find a product 
+
+    def find_product
+Product.find(params[:id])
+    end 
 
     # Only allow a list of trusted parameters through.
     def product_params
