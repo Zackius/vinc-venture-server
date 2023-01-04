@@ -17,13 +17,13 @@ render json: @product, status: :ok
   # POST /products
   def create
     @product = Product.new(product_params)
-   render json: recipe, status: :created
+   render json: @product,  status: :created
   end
 
   # PATCH/PUT /products/1
   def update
   @product = find_product.update!(product_params)
-  render json: recipe
+  render json: @product
 
   end
 
