@@ -17,7 +17,7 @@ render json: @product, status: :ok
 
   # POST /products
   def create
-    @product = Product.new(product_params)
+    @product = Product.create!(product_params)
    render json: @product,  status: :created
   end
 
@@ -49,7 +49,7 @@ Product.find(params[:id])
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name,  :description, :image, :price)
+      params.require(:product).permit(:name,  :description, :image, :price, :category_id)
     end
 
     def set_categories

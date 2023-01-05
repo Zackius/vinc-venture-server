@@ -3,6 +3,5 @@ class Product < ApplicationRecord
     validates :description, presence: true
     validates :image, presence: true
     validates :price, presence: true
-    validate :category_id, true
-    belongs_to :category 
+    belongs_to :category, class_name: 'Category', optional: false
 end
