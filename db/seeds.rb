@@ -10,5 +10,6 @@ Category.create(name: 'Heaters')
 Category.create(name: 'Nunix')
 Category.create(name: 'Dumbbells')
 Category.create(name: 'Gym & Fitness')
+Category.create(name: 'Bedroom')
 
 

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show update destroy ]
+  before_action :set_product, only: %i[ show ]
   before_action :set_categories
 
   # GET /products
@@ -23,14 +23,18 @@ render json: @product, status: :ok
 
   # PATCH/PUT /products/1
   def update
-  @product = find_product.update!(product_params)
-  render json: @product
-
+   @product = find_product
+   if @product
+    @product.update!(product_params)
+    render json: @product, status: :accepted
+   else
+    render json: {error: "Product not Found", status: :not_found}
+   end
   end
 
   # DELETE /products/1
   def destroy
-    @product = find_product
+    @product = find_product()
     @product.destroy
     head :no_content
   end
