@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show update destroy ]
+  before_action :set_categories
 
   # GET /products
   def index
@@ -48,6 +49,10 @@ Product.find(params[:id])
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :image, :price)
+      params.require(:product).permit(:name,  :description, :image, :price)
+    end
+
+    def set_categories
+@categories = Category.all.order(:name)
     end
 end
