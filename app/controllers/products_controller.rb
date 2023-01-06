@@ -23,13 +23,9 @@ render json: @product, status: :ok
 
   # PATCH/PUT /products/1
   def update
-   @product = find_product
-   if @product
-    @product.update!(product_params)
+   @product = find_product.update!(product_params)
     render json: @product, status: :accepted
-   else
-    render json: {error: "Product not Found", status: :not_found}
-   end
+ 
   end
 
   # DELETE /products/1
