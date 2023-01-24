@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   patch "/products/:id", to: "products#update"
 
   
-  resources :categories, only: [:index, :showgit ]
+  resources :categories, only: [:index, :show ]
   resources :products, only: [:index, :show, :create, :update, :destroy]
 
 
