@@ -15,13 +15,6 @@ render json: @category, status: :ok
   end
   
 
-  # PATCH/PUT /categories/1
-  def update
-    @category= find_category.update!(category_params)
-    render json: @category, status: :accepted
-  end
-  
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
