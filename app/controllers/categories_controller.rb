@@ -33,6 +33,6 @@ Category.find(params[:id])
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name, :image:)
+      params.require(:category).permit(:name, :image)
     end
 end
