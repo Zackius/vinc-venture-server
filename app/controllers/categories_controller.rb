@@ -13,7 +13,11 @@ class CategoriesController < ApplicationController
 @category = find_category
 render json: @category, status: :ok
   end
-  
+  #POST/categories
+  def create
+    @category = Category.create!(category_params)
+   render json: @category,  status: :created
+  end
 
   # PATCH/PUT /categories/1
   def update
