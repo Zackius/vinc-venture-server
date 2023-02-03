@@ -24,7 +24,13 @@ render json: @category, status: :ok
     @category= find_category.update!(category_params)
     render json: @category, status: :accepted
   end
-  
+  #DELETE/categories/1
+
+  def destroy
+    @category = find_category()
+    @category.destroy
+    head :no_content
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
