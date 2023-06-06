@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   root 'products#index'
   post "/create", to: "products#create"
   get "/products/:id", to: "products#show"
