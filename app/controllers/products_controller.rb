@@ -52,7 +52,7 @@ Product.find(params[:id])
       params.require(:product).permit(:name,  :description, :image, :price, :category_id)
     end
 
-    def set_categories
+    def set_categories 
 @categories = Category.all.order(:name)
     end
 end
