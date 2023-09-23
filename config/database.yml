@@ -81,8 +81,8 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: postgres://vinc:6HyjbRnIaf8m1C53uKZ72IUD720lGSwC@dpg-cjqtsc5he99c73f7a950-a/vinc_ventures
   <<: *default
-  database: vinc_ventures_production
-  username: vinc_ventures
-  password: <%= ENV["VINC_VENTURES_DATABASE_PASSWORD"] %>
+  database: vinc_ventures
+  username: vinc
+  password: 6HyjbRnIaf8m1C53uKZ72IUD720lGSwC
