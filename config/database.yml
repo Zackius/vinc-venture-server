@@ -21,7 +21,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
+production:
   <<: *default
   database: vinc_ventures_development
 
@@ -83,6 +83,6 @@ production:
   <<: *default
   url: postgres://vinc:6HyjbRnIaf8m1C53uKZ72IUD720lGSwC@dpg-cjqtsc5he99c73f7a950-a/vinc_ventures
   <<: *default
-  database: vinc_ventures
-  username: vinc
+  database: vinc_ventures_development
+  username: zacharia
   password: 6HyjbRnIaf8m1C53uKZ72IUD720lGSwC
