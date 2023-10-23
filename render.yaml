@@ -1,3 +1,19 @@
+databases:
+  - name: postgres
+    ipAllowList: []
+    databaseName: vinc_ventures_development
+    user: zacharia
+
 services:
-  - name: web
-    buildCommand: bundle exec rails db:migrate && bundle exec rails server -p $PORT
+  - type: web
+    name: vinc_ventures_development
+    env: ruby
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgres
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
