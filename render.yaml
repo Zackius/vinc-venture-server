@@ -1,12 +1,12 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: vinc-vetures
+    databaseName: vinc-ventures
+    user: zack
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: vinc-ventures
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: vinc-ventures
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
