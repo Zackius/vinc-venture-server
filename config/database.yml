@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: vinc_ventures_development
+  database: vinc_venture_server_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: vinc_ventures
+  #username: vinc_venture_server
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: vinc_ventures_test
+  database: vinc_venture_server_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,8 +81,6 @@ test:
 #
 production:
   <<: *default
-  url: postgres://vinc:6HyjbRnIaf8m1C53uKZ72IUD720lGSwC@dpg-cjqtsc5he99c73f7a950-a/vinc_ventures
-  <<: *default
-  database: vinc_ventures
-  username: vinc
-  password: 6HyjbRnIaf8m1C53uKZ72IUD720lGSwC
+  database: vinc_venture_server_production
+  username: vinc_venture_server
+  password: <%= ENV["VINC_VENTURE_SERVER_DATABASE_PASSWORD"] %>

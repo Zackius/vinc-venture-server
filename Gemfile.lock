@@ -72,6 +72,7 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     date (3.3.3)
+    date (3.3.3-java)
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -97,6 +98,7 @@ GEM
     mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.6.0)
+    msgpack (1.6.0-java)
     net-imap (0.3.4)
       date
       net-protocol
@@ -107,13 +109,25 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nio4r (2.5.8-java)
     nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    nokogiri (1.13.10-java)
+      racc (~> 1.4)
+    nokogiri (1.13.10-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.13.10-x86-mingw32)
+      racc (~> 1.4)
     pg (1.4.5)
+    pg (1.4.5-x64-mingw32)
+    pg (1.4.5-x86-mingw32)
     puma (5.6.5)
       nio4r (~> 2.0)
+    puma (5.6.5-java)
+      nio4r (~> 2.0)
     racc (1.6.2)
+    racc (1.6.2-java)
     rack (2.2.5)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -152,14 +166,22 @@ GEM
     timeout (0.3.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.4)
+      tzinfo (>= 1.0.0)
     websocket-driver (0.7.5)
+      websocket-extensions (>= 0.1.0)
+    websocket-driver (0.7.5-java)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     will_paginate (3.3.1)
     zeitwerk (2.6.6)
 
 PLATFORMS
+  java
   ruby
+  x64-mingw32
+  x86-mingw32
+  x86-mswin32
 
 DEPENDENCIES
   bootsnap
@@ -172,7 +194,7 @@ DEPENDENCIES
   will_paginate (~> 3.3.0)
 
 RUBY VERSION
-   ruby 2.7.6p219
+   ruby 3.0.2p107
 
 BUNDLED WITH
    2.1.4
