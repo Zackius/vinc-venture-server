@@ -5,4 +5,5 @@ set -o errexit
 bundle install
 ./bin/rails assets:precompile
 ./bin/rails assets:clean
-rails db:{migrate,seed}
+bundle exec rails db:migrate
+bundle exec rails db:seed
