@@ -1,3 +1,4 @@
 services:
   - name: web
+    type: rails
     buildCommand: bundle exec rails db:migrate && bundle exec rails server -p $PORT
